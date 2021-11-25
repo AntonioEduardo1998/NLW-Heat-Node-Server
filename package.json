@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --exit-child src/server.ts"
+    "dev": "ts-node-dev --exit-child src/server.ts",
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "start:prod": "node dist/app.js"
   },
   "dependencies": {
     "@prisma/client": "3.4.2",
