@@ -10,10 +10,7 @@ services:
     depends_on:
       - postgres
     environment:
-      - GITHUB_CLIENT_SECRET=922007172b85938d9fd475026baf7175cbb21d06
-      - GITHUB_CLIENT_ID=53195716cc7280da1f37
-      - JWT_SECRET=9683a08e8cbcf81daa933e5a4b32c3eb
-      - DATABASE_URL=postgresql://prisma:root@postgres:5432/mydb?schema=mydb&sslmode=prefer
+      .env
 
   postgres:
     image: postgres:13
@@ -22,9 +19,7 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=prisma
-      - POSTGRES_PASSWORD=root
-      - POSTGRES_DB=mydb
+      .env
     volumes:
       - postgres:/var/lib/postgresql/data
 
